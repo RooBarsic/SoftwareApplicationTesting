@@ -20,8 +20,5 @@ jobs:
       - name: Clone repository
         uses: actions/checkout@v1
       
-      - name: move to lab1 directory
-        run: cd lab1
-
       - name: Run tests
-        run: mvn test
+        run: cd lab1; mvn test
