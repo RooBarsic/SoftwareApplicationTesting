@@ -1,0 +1,27 @@
+name: Lab1
+
+on: [push]
+
+jobs:
+  run-tests:
+
+    runs-on: [ubuntu-18.04]
+
+    steps:
+      - name: Java version
+        run: java -version
+
+      - name: Installing maven
+        run: sudo apt-get -y install maven
+
+      - name: Maven version
+        run: mvn -version
+
+      - name: Clone repository
+        uses: actions/checkout@v1
+      
+      - nmae: move to lab1 directory
+        uses: cd lab1
+
+      - name: Run tests
+        run: mvn test
