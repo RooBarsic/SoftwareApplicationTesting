@@ -20,7 +20,7 @@ jobs:
       - name: Clone repository
         uses: actions/checkout@v1
       
-      - nmae: move to lab1 directory
+      - name: move to lab1 directory
         uses: cd lab1
 
       - name: Run tests
