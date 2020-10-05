@@ -10,6 +10,7 @@ import org.junit.runner.RunWith;
 import static org.junit.Assert.assertTrue;
 
 /**
+ * Testing for implemented realisation of arcTg
  *
  * Author: Farrukh Karimov
  * Last modification: 05/10/2020
@@ -52,7 +53,7 @@ public class ArcTgFunctionTest {
 
     @Test
     @UseDataProvider("pointsDataProvider")
-    public void checkPoint(final double point, @NotNull final String message) {
+    public void calculationAcrTgIsCorrect(final double point, @NotNull final String message) {
         final double arcTgByImplementedFunction = arcTgFunction.calc(point);
         final double arcTgByLibraryFunction = Math.atan(point);
         final double diffAbs = Math.abs(arcTgByImplementedFunction - arcTgByLibraryFunction);
@@ -64,7 +65,7 @@ public class ArcTgFunctionTest {
      */
     @Test
     @UseDataProvider("pointsDataProvider")
-    public void checkPointByFormula(final double point, @NotNull final String message) {
+    public void testCalculationCorrectnessByFormula(final double point, @NotNull final String message) {
         final double arcTgOfPoint = arcTgFunction.calc(point);
         final double arcTgOfNegatedPoint = arcTgFunction.calc(-point);
         final double diffAbsByFormula = Math.abs(arcTgOfPoint - (-arcTgOfNegatedPoint));

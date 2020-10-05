@@ -1,6 +1,7 @@
 package com.company;
 
 /**
+ * Implemented acrTg counting
  *
  * Author: Farrukh Karimov
  * Last modification: 05/10/2020
