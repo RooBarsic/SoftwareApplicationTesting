@@ -20,7 +20,7 @@ import static org.junit.Assert.*;
 public class HashTableTest {
     private final int INT_LEFT_LIMIT = -1000000000;
     private final int INT_RIGHT_LIMIT = 1000000000;
-    private final int COEFFICIENT = 1705;
+    private final int COEFFICIENT = 175;
 
     private static List<Integer> generateRandomInts(final int elementsNumber, int leftLimit, int rightLimit) {
         assertTrue("wrong parameter for number generator function",
@@ -35,6 +35,24 @@ public class HashTableTest {
         }
 
         return new ArrayList<>(generatedElements);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void cantPutNullValue() {
+        final HashTable<String> hashTable = new HashTable<>();
+        hashTable.put(null);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void cantRemoveNullValue() {
+        final HashTable<String> hashTable = new HashTable<>();
+        hashTable.remove(null);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void cantCheckForNullValue() {
+        final HashTable<String> hashTable = new HashTable<>();
+        hashTable.contains(null);
     }
 
     @Test
