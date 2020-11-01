@@ -37,19 +37,19 @@ public class HashTableTest {
         return new ArrayList<>(generatedElements);
     }
 
-    @Test(expected = NullPointerException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void cantPutNullValue() {
         final HashTable<String> hashTable = new HashTable<>();
         hashTable.put(null);
     }
 
-    @Test(expected = NullPointerException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void cantRemoveNullValue() {
         final HashTable<String> hashTable = new HashTable<>();
         hashTable.remove(null);
     }
 
-    @Test(expected = NullPointerException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void cantCheckForNullValue() {
         final HashTable<String> hashTable = new HashTable<>();
         hashTable.contains(null);
